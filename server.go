@@ -8,7 +8,7 @@ import (
 )
 
 func StartServer() {
-	port := "8080"
+	port := "5000"
 	path := "./html/"
 
 	router := gin.Default()
@@ -20,7 +20,8 @@ func StartServer() {
 	router.GET("/", controller.Index)
 
 	// API
-	router.POST("/api/v1", controller.IndexAPI)
+	router.GET("/api/v1/get", controller.IndexAPI)
+	router.POST("/api/v1/post", controller.IndexAPI)
 
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(404, gin.H{"code": "PAGE_NOT_FOUND", "message": "Page not found"})
