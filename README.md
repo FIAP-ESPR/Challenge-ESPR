@@ -43,7 +43,7 @@
     
     Em [/conf/db.conf](./conf/db.conf) garanta que esta prenchido com o os dados do seu banco.
 
-2. **Seu arquivo deve estar dessa maneira**
+    Seu **[arquivo](./conf/db.conf)** deve conter essa estrutura
     ```JSON
     {
         "db" : "",
@@ -53,3 +53,9 @@
         "database" : ""
     }
     ```
+
+2. **Verifique o arquivo do Tutorial do WSL**
+
+    Pode ser um possivel erro de conexão com o Banco de Dados.
+
+    [**[ WSL DB Tutorial ]**](./docs/DataBase.md)
