@@ -1,15 +1,55 @@
 # Challenge-ESPR
-Diogo Julio [ RM  553837 ] | Matheus Zottis [ RM 94119 ] | Victor Didoff [ RM 552965 ] | Vinicius Silva [ RM 553240 ]
 
+|Nome|RM|
+|:-:|:-:|
+|**Diogo Julio** | **[ RM 553837 ]**|
+|**Matheus Zottis** | **[ RM 94119 ]**|
+|**Victor Didoff** | **[ RM 552965 ]**|
+|**Vinicius Silva** | **[ RM 553240 ]**|
 
-# Run Project
+## Run Project
 
-install `go 1.23.0` or above
+### Requisitos
+- Instale o **Go 1.23.0** ou superior.
+- Instale e Crie o Banco de Dados do Projeto. [[ WSL DB Tutorial ]](./docs/DataBase.md) | [[ DB command ]](./db/sql/script.sql)
 
-clone the project in your pc
+### Instruções para Executar o Projeto
 
-stay inside in the root directory from the project `Challeng-ESPR`
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/FIAP-ESPR/Challenge-ESPR.git
+   ```
 
-and run the command `go run .`
+2. **Navegue até o diretório raiz do projeto**
+   ```bash
+   cd Challenge-ESPR
+   ```
 
-or `go build .` and run the executable
+3. **Executar o projeto diretamente**
+    ```bash
+    go run .
+    ```
+
+    Ou, se preferir gerar um executável
+
+4. **Compilar e executar o binário**
+    ```bash
+    go build .
+    ```
+
+### Troubleshooting
+
+1. **Verifique o arquivo de configuração**
+    
+    Em [/conf/db.conf](./conf/db.conf) garanta que esta prenchido com o os dados do seu banco.
+
+2. **Seu arquivo deve estar dessa maneira**
+    ```JSON
+    {
+        "db" : "",
+        "port" : "",
+        "username" : "",
+        "password" : "",
+        "database" : ""
+    }
+    ```
