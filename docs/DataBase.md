@@ -85,6 +85,29 @@ O WSL não mantém serviços em execução após ser fechado. Para garantir que 
 Agora, o PostgreSQL será iniciado automaticamente ao abrir o WSL.
 
 ---
+## Criando o usuario e o Banco de dados
+
+Para poder acessar de fora não se pode utilizar o usuario root pois o serviço de autenticação ssl nao permite a utilização se nao for um ssl emitido pela propria maquina virtual.
+
+1. Para criar um novo usuário no PostgreSQL, você precisará acessar o terminal do WSL e utilizar o comando CREATE USER dentro do postgres. Vou te guiar pelo processo passo a passo:
+    - **Commando no WSL para acessar ao Terminal Postgres**
+    ```bash
+        sudo -u postgres psql
+    ```
+
+    - **Comando no Terminal Postgres para crirar o Usuario e o DB**
+    ```sql
+    DO $$
+    BEGIN
+        IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'admin') THEN
+            CREATE USER admin WITH PASSWORD 'adminadmin' SUPERUSER;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'ancora') THEN
+            CREATE DATABASE ancora OWNER admin;
+        END IF;
+    END $$;
+    ```
+---
 
 ## Configurando o PostgreSQL para Aceitar Conexões Externas
 
