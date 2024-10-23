@@ -7,6 +7,8 @@
 |**Victor Didoff** | **[ RM 552965 ]**|
 |**Vinicius Silva** | **[ RM 553240 ]**|
 
+>  Temos uma paginas com alguns tutoriais separados por aquivo em [[ Challeng-ESPR ]](./docs/)
+
 ## Run Project
 
 ### Requisitos
@@ -56,6 +58,4 @@
 
 2. **Verifique o arquivo do Tutorial do WSL**
 
-    Pode ser um possivel erro de conexão com o Banco de Dados.
-
-    [**[ WSL DB Tutorial ]**](./docs/DataBase.md)
+    Pode ser um possivel erro de conexão com o Banco de Dados [**[ WSL DB Tutorial ]**](./docs/DataBase.md)
