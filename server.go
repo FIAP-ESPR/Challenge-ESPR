@@ -21,7 +21,7 @@ func StartServer() {
 	// Set up routes
 	router.GET("/", controller.Index)
 
-	// API
+	// Set up routs to API
 	router.GET("/api/v1/get", controller.IndexAPI)
 	router.POST("/api/v1/post", controller.IndexAPI)
 
