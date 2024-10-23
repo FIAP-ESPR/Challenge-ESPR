@@ -31,7 +31,6 @@ func StartServer() {
 
 	err := router.Run(":" + port)
 	fmt.Println(err)
-
 }
 
 func main() {
