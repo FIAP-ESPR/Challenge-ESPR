@@ -18,6 +18,17 @@ type Config struct {
 var config *Config
 var ConfigFile string
 
+func ValidateConfig() bool {
+	if ConfigFile == "" {
+		return false
+	}
+	config := GetConfig()
+	if config.DBHost == "" || config.DBPort == "" || config.DBUsername == "" || config.DBPassword == "" || config.DBName == "" {
+		return false
+	}
+	return true
+}
+
 func GetConfig() *Config {
 	//fmt.Println("ConfigFile", ConfigFile)
 	if config == nil {

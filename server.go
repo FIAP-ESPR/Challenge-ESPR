@@ -2,6 +2,8 @@ package main
 
 import (
 	"fiap/ancora/controller"
+	"fiap/ancora/db"
+	"fiap/ancora/helper"
 	"fmt"
 
 	"github.com/gin-gonic/gin"
@@ -33,5 +35,16 @@ func StartServer() {
 }
 
 func main() {
+	helper.ConfigFile = "./conf/db.conf"
+	if !helper.ValidateConfig() {
+		fmt.Println("Configuração inválida")
+		return
+	}
+	database := db.GetDB()
+	err := database.Ping()
+	if err != nil {
+		fmt.Println("Erro ao conectar ao banco de dados")
+		return
+	}
 	StartServer()
 }
