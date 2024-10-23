@@ -44,6 +44,7 @@ func main() {
 	err := database.Ping()
 	if err != nil {
 		fmt.Println("Erro ao conectar ao banco de dados")
+		fmt.Println(err)
 		return
 	}
 	StartServer()
