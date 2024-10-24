@@ -184,5 +184,3 @@ Se tudo estiver configurado corretamente, você deverá ser capaz de se conectar
 2. **Configuração de Firewall:** Certifique-se de que o firewall do Windows permite conexões na porta 5432 (ou a porta que você configurou para o PostgreSQL).
 
 ---
-
-172.17.223.255
