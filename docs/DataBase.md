@@ -97,15 +97,8 @@ Para poder acessar de fora não se pode utilizar o usuario root pois o serviço 
 
     - **Comando no Terminal Postgres para crirar o Usuario e o DB**
     ```sql
-    DO $$
-    BEGIN
-        IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'admin') THEN
-            CREATE USER admin WITH PASSWORD 'adminadmin' SUPERUSER;
-        END IF;
-        IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'ancora') THEN
-            CREATE DATABASE ancora OWNER admin;
-        END IF;
-    END $$;
+    CREATE USER admin WITH PASSWORD 'adminadmin' SUPERUSER;
+    CREATE DATABASE ancora OWNER admin;
     ```
 ---
 
@@ -139,13 +132,19 @@ Por padrão, o PostgreSQL está configurado para aceitar conexões apenas locais
     sudo nano /etc/postgresql/12/main/pg_hba.conf
     ```
 
-2. No final do arquivo, adicione a seguinte linha para permitir conexões de fora da rede do WSL (use o IP do host WSL, que geralmente é `172.19.0.1`, mas pode variar):
+2. Descubra seu IP:
 
     ```bash
-    host    all             all             172.19.0.1/16           md5
+    ip addr
     ```
 
-3. Salve e feche o arquivo.
+3. No final do arquivo, adicione a seguinte linha para permitir conexões de fora da rede do WSL (use o IP do host WSL, que geralmente é `172.19.0.1`, mas pode variar):
+
+    ```bash
+    host    all             all             0.0.0.0/0           md5
+    ```
+
+4. Salve e feche o arquivo.
 
 ### Passo 3: Reiniciando o PostgreSQL
 
