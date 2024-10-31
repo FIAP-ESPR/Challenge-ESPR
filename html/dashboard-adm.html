@@ -11,45 +11,104 @@
     <link rel="icon" href="./static/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="./static/css/sass.scss">
-    <title>Ancora Dashboard ADM</title>
+    <title>Ancora - Dashboard</title>
 </head>
 <!-- Projeto da rede Ancora| Página de Administradores para oficinas grandes -->
 
-<body>
-
-    <nav class="navbar bg-body-tertiary ancor-blue">
+<body onload="displayCards()">
+    <nav class="navbar bg-body-tertiary ancor-blue d-flex">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="./static/img/favicon.png" alt="Ancora" width="60" height="35" 003A5D>
             </a>
-            <!-- caixa de pesquisa para integrar com IA -->
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit"><span class="material-symbols-outlined">
-                    search
-                    </span></button>
-            </form>
+
         </div>
     </nav>
-
-    <section id="welcome" class="container ">
+    <section id="welcome" class="container p-4 mt-1">
+        <h1>Bem-vindo Mecanico ao ERP Ancora.</h1>
         <!-- mensagen de boas vindas com o nome do mecanico (feita em JS) -->
     </section>
     <!-- dashboard com os cards relevantes Ex:ADM tera o cards "mecanicos" mas o Mecanico autonomo não. -->
-     <!-- sera implementado com JS, deixei um card de exemplo  -->
 
-    <section id="dasboard" class="container d-flex justify-content-center">
+
+    <!-- sera implementado com JS, deixei um card de exemplo  -->
+
+
+
+    <!-- O dashboard terá um area rezumindo as informaçoes -->
+    <div id="overview" class="row row-cols-2 row-cols-lg-4 g-4 m-1 text-center">
+        <div class="col">
+            <div id="res-mecanicos" class="card ">
+                <div class="card-body bg-success text-white">
+                    <h5 class="card-title">Mecanicos</h5>
+                    <p id="res-mecanicos-n">###</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="res-mecanicos" class="card ">
+                <div class="card-body bg-success text-white">
+                    <h5 class="card-title">Peças</h5>
+                    <p id="res-pecas-n">###</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="res-mecanicos" class="card ">
+                <div class="card-body bg-success text-white">
+                    <h5 class="card-title">Carros</h5>
+                    <p id="res-carros-n">###</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="res-mecanicos" class="card ">
+                <div class="card-body bg-success text-white">
+                    <h5 class="card-title">Mecanicos</h5>
+                    <p id="res-mecanicos-n">###</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="dasboard" class="row row-cols-1 row-cols-lg-4 g-4 m-1 text-center justify-content-center">
         <div class="card m-5" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Mecanicos</h5>
-              <a href="#" class="btn btn-primary">></a>
+                <h5 class="card-title">Estoque</h5>
+                <a href="#" class="btn btn-primary">Conferir</a>
             </div>
-          </div>
-          
+        </div>
 
-  <!-- Scripts -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+        <div class="card m-5" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Carros</h5>
+                <a href="#" class="btn btn-primary">Conferir</a>
+            </div>
+        </div>
+
+        <div class="card m-5" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Carros</h5>
+                <a href="#" class="btn btn-primary">Conferir</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- caixa de pesquisa para integrar com IA -->
+    <div class="sticky-bottom m-3 row row-cols-2 justify-content-center">
+        <div class=" col">
+            <input class=" form-control " type="search" placeholder="Digite aqui ..." aria-label="Search">
+        </div>
+        <div class="spinner-grow text-primary col d-none " role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 </body>
 <script src="./static/js/script.js"></script>
 
