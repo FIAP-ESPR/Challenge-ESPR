@@ -1,1 +1,19 @@
 /* TODO */
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.ancor-blue {
+    background-color: #003A5D !important;
+}
+
+.foregrnd {
+    height: 100%;
+    background-image: url(/html/static/img/bg-login.jpg) !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
