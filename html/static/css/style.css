@@ -11,7 +11,7 @@ body {
 
 .foregrnd {
     height: 100%;
-    background-image: url(/html/static/img/bg-login.jpg) !important;
+    background-image: url(/static/img/bg-login.jpg) !important;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

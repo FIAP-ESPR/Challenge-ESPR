@@ -19,9 +19,11 @@ func StartServer() {
 	router.Static("/static", path+"static/")
 
 	// Set up routes
-	router.GET("/", controller.Index)
+	router.GET("/", controller.Login)
 
 	// Set up routs to API
+	router.GET("/login", controller.LoginValidate)
+	router.POST("/sign-up", controller.SignUp)
 	router.GET("/api/v1/get", controller.IndexAPI)
 	router.POST("/api/v1/post", controller.IndexAPI)
 
