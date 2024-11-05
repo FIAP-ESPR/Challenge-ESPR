@@ -1,8 +1,31 @@
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+
 const btnSend = document.getElementById('enviar');
 btnSend.addEventListener('click', defineUser);
+
 function defineUser(){
     //função validadar usuário
 };
+
 
 
 function displayCards(){
@@ -24,3 +47,17 @@ function countOverview(){
 function loadAi(){
     // função que verifica se o usuário digitou na pesquisa e mostra animação de carregamento
 }
+
+function validadeLogin(){
+
+}
+
+function showSignup(){
+let signup = document.querySelector('#signup');
+let login = document.querySelector('#login');
+
+login.classList.toggle('visually-hidden')
+signup.classList.toggle('visually-hidden')
+}
+
+

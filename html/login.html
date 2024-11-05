@@ -12,8 +12,8 @@
   <title>Ancora - ERP</title>
 </head>
 <!-- Projeto da rede Ancora| Página de logIn, para definir se o usuário é uma oficina inteira ou um mecanico individual. -->
+
 <body class="foregrnd">
-  <!--TODO--> 
   <nav class="navbar bg-body-tertiary ancor-blue">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -22,25 +22,76 @@
     </div>
   </nav>
   <section class="d-flex justify-content-center foregrnd ">
-    <div class="card m-5" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Login</h5>
-        <!-- modal de login para definir se é ADM ou mecanico -->
 
-        <!-- TODO: username, email, password, cpf / cnpj, -->
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <!-- TODO: username, email, password, cpf / cnpj, -->
+    <div id="signup" class="container m-5 p-4 sqr-light visually-hidden">
+      <form class="row row-cols-1 g-2 needs-validation" novalidate>
+        <div class="col-md-6 ">
+          <label for="validationCustomUsername" class="form-label">Usuário</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <!-- Input para nome de usuário, deve ser unico id:"validationCustomUsername":  -->
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+              required>
+            <div class="invalid-feedback">
+              Escolha um nome de usuário.
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustomEmail" class="form-label">Email</label>
+          <!-- Input para email, deve ser no formato certo: Exemplo@email.com id:"validationCustomEmail"  -->
+          <input type="email" class="form-control" id="validationCustomEmail" aria-describedby="emailHelp" required>
+          <div class="invalid-feedback">
+            Escolha um email válido.
           </div>
-          <button id="enviar" type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustomID" class="form-label">CPF/CNPJ</label>
+          <!-- Input para CPF ou CNPJ, deve ser no formato certo: 000.000.000-00 ou XX. XXX. XXX/0001-XX  id:"validationCustomId"  -->
+          <input type="text" class="form-control" id="validationCustomId" required>
+          <div class="invalid-feedback">
+            Coloque um CPF/CNPJ válido.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <!-- Um checkbox para certificar que o usuário está de acorco com os termos e condições -->
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Concordo com os termos e condições
+            </label>
+            <div class="invalid-feedback">
+              Você Precisa Concordar para continuar
+            </div>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-end">
+          <button class="btn btn-primary ancor-blue" type="submit">Cadastrar</button>
+        </div>
+      </form>
     </div>
+
+    <div class="card m-5 p-4 col-sm-4" id="login">
+      <h5 class="card-title">Login</h5>
+      <!-- modal de login para definir se é ADM ou mecanico  vai depender se foi cadastrado um CPF ou CNPJ-->
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="emailv" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button id="enviar" type="submit" class="btn btn-primary ancor-blue">Entrar</button>
+        <button id="cadastrarbtn" type="button" class="btn btn-primary ancor-blue"
+          onclick="showSignup()">Cadastre-se</button>
+
+      </form>
+    </div>
+
+
   </section>
   <section class="container ancor-blue">
 
