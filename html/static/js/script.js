@@ -49,7 +49,7 @@ function loadAi(){
 }
 
 function validadeLogin(){
-
+  window.location.pathname = 'html\dashboard-adm.html';
 }
 
 function showSignup(){
