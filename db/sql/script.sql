@@ -1,11 +1,14 @@
-DO $$
-BEGIN
-    IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'admin') THEN
-        CREATE USER admin WITH PASSWORD 'adminadmin' SUPERUSER;
-    END IF;
-    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'ancora') THEN
-        CREATE DATABASE ancora OWNER admin;
-    END IF;
-END $$;
+CREATE USER admin WITH PASSWORD 'adminadmin' SUPERUSER;
+CREATE DATABASE ancora OWNER admin;
+/* Users Table */
+
+-- DROP TABLE public.users;
+
+CREATE TABLE public.users (
+	id serial4 NOT NULL,
+	username varchar NOT NULL,
+	"password" bytea NOT NULL,
+	CONSTRAINT users_pk PRIMARY KEY (id)
+);
 
 /* TODO */

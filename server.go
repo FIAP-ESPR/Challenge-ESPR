@@ -20,12 +20,8 @@ func StartServer() {
 
 	// Set up routes
 	router.GET("/", controller.Login)
-
-	// Set up routs to API
-	router.GET("/login", controller.LoginValidate)
-	router.POST("/sign-up", controller.SignUp)
-	router.GET("/api/v1/get", controller.IndexAPI)
-	router.POST("/api/v1/post", controller.IndexAPI)
+	router.POST("/sign-in", controller.SignInPost)
+	router.POST("/sign-up", controller.SignUpPost)
 
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(404, gin.H{"code": "PAGE_NOT_FOUND", "message": "Page not found"})
