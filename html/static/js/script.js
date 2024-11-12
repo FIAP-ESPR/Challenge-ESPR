@@ -23,7 +23,7 @@ const btnSend = document.getElementById('enviar');
 btnSend.addEventListener('click', defineUser);
 
 function defineUser(){
-    //função validadar usuário
+    //função validadar usuário editar conforme as permissoes
 };
 
 
