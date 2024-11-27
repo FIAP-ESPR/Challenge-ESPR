@@ -58,7 +58,7 @@ function validadeLogin() {
 
   if (email == testEmail && pswrd == testePswr) {
     window.alert('login validado');
-    window.location.pathname = './html/dashboard-adm.html';
+    window.location.pathname = src='html/dashboard-adm.html';
   }
   else {
 
