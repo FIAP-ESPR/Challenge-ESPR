@@ -24,7 +24,7 @@ func StartServer() {
 	router.POST("/sign-up", controller.SignUpPost)
 	router.GET("/home", controller.Home)
 	router.GET("/dashboard", controller.Dasboard)
-	router.GET("/stock", controller.Estoque)
+	router.GET("/estoque", controller.Estoque)
 
 
 	router.NoRoute(func(c *gin.Context) {

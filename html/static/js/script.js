@@ -44,13 +44,27 @@ function countOverview() {
   let Carros = document.querySelector('#res-carros-n');
 }
 
+const quest = document.getElementById('iaInput');
+quest.on('click', loadAi());
+
 function loadAi() {
+  window.alert('GEPETTo')
   // função que verifica se o usuário digitou na pesquisa e mostra animação de carregamento
+  const quest = document.getElementById('iaInput')
+  let spn = document.getElementById('spinner');
+  var q = quest.value;
+  if(q.lenght > 3 ){
+    spn.classList.remove('visually-hidden')
+  }
+  
 }
 
 
 function validadeLogin() {
   //Valida o Usuário procurando Email e senha em usuários caastrados
+  const validade = false;
+  
+  let cadast = document.getElementById('cadastrarbtn');
   let email = document.getElementById('emailv').value;
   let pswrd = document.getElementById('examplePassword').value;
   let testEmail = "cliente@email.com";
@@ -59,9 +73,11 @@ function validadeLogin() {
   console.log(email,pswrd)
   if (email == testEmail && pswrd == testePswr) {
     window.location.pathname = src ='dashboard';
+    validade = true;
+
   }
   else {
-    window.alert("email ou senha incorretos")
+    cadast.classList.replace('ancor-blue','bg-success')
   }
 }
 
