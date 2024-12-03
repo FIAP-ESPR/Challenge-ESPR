@@ -22,4 +22,17 @@ func Home(c *gin.Context) {
 	c.HTML(200, "home.html", gin.H{
 		"user": user,
 	})
+
+}
+
+func Dasboard(c *gin.Context) {
+	c.HTML(200, "dashboard.html", gin.H{
+		"title": "Dasboard ERP",
+	})
+}
+
+func Estoque(c *gin.Context) {
+	c.HTML(200, "estoque.html", gin.H{
+		"title": "Estoque de Peças",
+	})
 }

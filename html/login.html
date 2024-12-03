@@ -16,7 +16,7 @@
 <body class="foregrnd">
   <nav class="navbar bg-body-tertiary ancor-blue">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand">
         <img src="/static/img/favicon.png" alt="Ancora" width="60" height="35" 003A5D>
       </a>
     </div>
@@ -54,6 +54,13 @@
             Coloque um CPF/CNPJ válido.
           </div>
         </div>
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip05" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="validationTooltip05" required>
+          <div class="invalid-tooltip">
+            Escolha uma senha forte.
+          </div>
+        </div>
         <div class="col-12">
           <div class="form-check">
             <!-- Um checkbox para certificar que o usuário está de acorco com os termos e condições -->
@@ -67,10 +74,10 @@
           </div>
         </div>
         <div class="col-12 d-flex justify-content-end">
-          <button id="cadastrarbtn" type="button" class="btn btn-primary ancor-blue"
+          <button id="voltarbtn" type="button" class="btn btn-primary ancor-blue"
           onclick="showSignup()">Voltar</button>
 
-          <button class="btn btn-primary ancor-blue" type="submit">Cadastrar</button>
+          <button id="cadastrar" class="btn btn-primary ancor-blue" type="submit">Cadastrar</button>
         </div>
       </form>
     </div>
@@ -78,14 +85,20 @@
     <div class="card m-5 p-4 col-sm-4" id="login">
       <h5 class="card-title">Login</h5>
       <!-- modal de login para definir se é ADM ou mecanico  vai depender se foi cadastrado um CPF ou CNPJ-->
-      <form>
+      <form class="needs-validation" validate>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="emailv" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="emailv" aria-describedby="emailHelp" required>
+          <div class="invalid-feedback">
+            Escolha um email válido.
+          </div>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="examplePassword">
+          <input type="password" class="form-control" id="examplePassword" required>
+          <div class="invalid-feedback">
+            Email ou senha Incorretos
+          </div>
         </div>
         <button id="enviar" type="button" class="btn btn-primary ancor-blue" onclick="validadeLogin()">Entrar</button>
         <button id="cadastrarbtn" type="button" class="btn btn-primary ancor-blue"

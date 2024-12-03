@@ -7,7 +7,7 @@
 
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
+    form.addEventListener('click', event => {
       if (!form.checkValidity()) {
         event.preventDefault()
         event.stopPropagation()
@@ -19,8 +19,8 @@
 })()
 
 
- const btnSend = document.getElementById('enviar');
- btnSend.addEventListener('click', defineUser);
+const btnSend = document.getElementById('cadastrar');
+btnSend.addEventListener('click', defineUser);
 
 function defineUser() {
   //função validadar usuário editar conforme as permissoes
@@ -54,14 +54,14 @@ function validadeLogin() {
   let email = document.getElementById('emailv').value;
   let pswrd = document.getElementById('examplePassword').value;
   let testEmail = "cliente@email.com";
-  let testePswr = "Teste@123"
+  let testePswr = "Teste@1234"
 
+  console.log(email,pswrd)
   if (email == testEmail && pswrd == testePswr) {
-    window.alert('login validado');
-    window.location.pathname = src='html/dashboard-adm.html';
+    window.location.pathname = src ='dashboard';
   }
   else {
-
+    window.alert("email ou senha incorretos")
   }
 }
 

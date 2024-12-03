@@ -23,6 +23,9 @@ func StartServer() {
 	router.POST("/sign-in", controller.SignInPost)
 	router.POST("/sign-up", controller.SignUpPost)
 	router.GET("/home", controller.Home)
+	router.GET("/dashboard", controller.Dasboard)
+	router.GET("/stock", controller.Estoque)
+
 
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(404, gin.H{"code": "PAGE_NOT_FOUND", "message": "Page not found"})
