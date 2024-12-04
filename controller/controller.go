@@ -31,8 +31,15 @@ func Dasboard(c *gin.Context) {
 	})
 }
 
-func Estoque(c *gin.Context) {
+func Estoque(c *gin.Context){
 	c.HTML(200, "estoque.html", gin.H{
-		"title": "Estoque de Peças",
+		"title": "Estoque| Peças",
 	})
+}
+
+func Carros(c *gin.Context)  {
+	c.HTML(200, "carros.html", gin.H{
+		"title": "Carros",
+	})
+	
 }
