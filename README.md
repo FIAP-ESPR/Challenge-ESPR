@@ -12,7 +12,7 @@
 ## Run Project
 
 ### Requisitos
-- Instale o **Go 1.23.0** ou superior.
+- Instale o **Go 1.24.0** ou superior.
 - Instale e Crie o Banco de Dados do Projeto. [[ WSL DB Tutorial ]](./docs/DataBase.md) | [[ DB command ]](./db/sql/script.sql)
 
 ### Instruções para Executar o Projeto
