@@ -50,7 +50,7 @@ func main() {
 	graph.AddEdge("Unidade AB", "Ponto AD", 29)
 	graph.AddEdge("CD AC", "Hub AE", 18)
 
-	gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.DebugMode)
 	r := gin.New()
 	r.Static("/static", "./website/static")
 	files, err := loadTemplates("./website/html/")

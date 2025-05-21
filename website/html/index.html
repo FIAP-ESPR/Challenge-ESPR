@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,6 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/keen-slider@6/keen-slider.min.css" rel="stylesheet" />
 </head>
+
 <body class="font-sans antialiased bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800">
   <div class="flex min-h-screen">
     <!-- Sidebar -->
@@ -48,103 +50,126 @@
           <h1 class="text-3xl font-bold tracking-tight">Autopeças</h1>
         </div>
         <div class="flex items-center space-x-4">
-          <a href="/carrinho" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow transition">Carrinho</a>
-          <a href="/opcoes" class="bg-blue-100 hover:bg-blue-200 text-blue-700 px-4 py-2 rounded-full transition">Opções</a>
+          <a href="/carrinho"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow transition">Carrinho</a>
+          <a href="/opcoes"
+            class="bg-blue-100 hover:bg-blue-200 text-blue-700 px-4 py-2 rounded-full transition">Opções</a>
           <a href="/sair" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full transition">Sair</a>
         </div>
       </header>
 
-  <!-- Carrossel de banners -->
- <div class="relative p-8">
-  <div class="keen-slider rounded-2xl overflow-hidden shadow-lg" id="product-slider">
-    <div class="keen-slider__slide relative">
-      <img src="static/img/banner1.jpg" alt="Promoção 1" class="w-full h-56 object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end p-6">
-        <span class="text-white text-2xl font-bold">Super Ofertas!</span>
+      <!-- Carrossel de banners -->
+      <div class="relative p-8">
+        <div class="keen-slider rounded-2xl overflow-hidden shadow-lg" id="product-slider">
+          <div class="keen-slider__slide relative">
+            <img src="static/img/banner1.jpg" alt="Promoção 1" class="w-full h-56 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end p-6">
+              <span class="text-white text-2xl font-bold">Super Ofertas!</span>
+            </div>
+          </div>
+          <div class="keen-slider__slide relative">
+            <img src="static/img/banner2.jpg" alt="Promoção 2" class="w-full h-56 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end p-6">
+              <span class="text-white text-2xl font-bold">Frete Grátis para todo Brasil!</span>
+            </div>
+          </div>
+          <!-- Terceiro banner adicionado -->
+          <div class="keen-slider__slide relative">
+            <img src="static/img/banner3.jpg" alt="Promoção 3" class="w-full h-56 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end p-6">
+              <span class="text-white text-2xl font-bold">Descontos exclusivos só hoje!</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="keen-slider__slide relative">
-      <img src="static/img/banner2.jpg" alt="Promoção 2" class="w-full h-56 object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end p-6">
-        <span class="text-white text-2xl font-bold">Frete Grátis para todo Brasil!</span>
-      </div>
-    </div>
-    <!-- Terceiro banner adicionado -->
-    <div class="keen-slider__slide relative">
-      <img src="static/img/banner3.jpg" alt="Promoção 3" class="w-full h-56 object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent flex items-end p-6">
-        <span class="text-white text-2xl font-bold">Descontos exclusivos só hoje!</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-
       <!-- Filtro e busca -->
       <section class="bg-white/80 p-8 rounded-2xl shadow mb-8 mx-8">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <input type="text" placeholder="🔍 Buscar peça..." class="w-full md:w-80 p-3 border border-blue-200 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400" />
+          <input type="text" placeholder="🔍 Buscar peça..."
+            class="w-full md:w-80 p-3 border border-blue-200 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-400" />
           <div class="flex gap-4">
-            <select class="p-3 border border-blue-200 rounded-lg shadow-sm">
-              <option>Categorias</option>
-              <option>Pastilhas</option>
-              <option>Filtros</option>
-              <option>Óleos</option>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow transition"
+              onclick="search()">Buscar</button>
+            <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full shadow transition"
+              onclick="clearFilters()">Limpar Filtros</button>
+          </div>
+          <div class="flex items-center gap-4">
+            <select class="p-3 border border-blue-200 rounded-lg shadow-sm" id="k-type" onchange="filterK()">
+              <option value="nil">Tipo de peça</option>
+              <option value="pastilha">Pastilha de Freio</option>
+              <option value="disco">Disco de Freio</option>
+              <option value="amortecedor">Amortecedor</option>
+              <option value="oleo">Óleo de Motor</option>
+              <option value="filtro">Filtro de Ar</option>
+              <option value="bateria">Bateria</option>
+              <option value="vela">Vela de Ignição</option>
+              <option value="cabo">Cabo de Vela</option>
+              <option value="pneu">Pneu</option>
+              <option value="parafuso">Parafuso</option>
+              <option value="mola">Mola</option>
+              <option value="radiador">Radiador</option>
+              <option value="bico">Bico Injetor</option>
+              <option value="embreagem">Embreagem</option>
+              <option value="transmissao">Transmissão</option>
+              <option value="suspensao">Suspensão</option>
+              <option value="direcao">Direção</option>
+              <option value="escapamento">Escapamento</option>
+              <option value="farol">Farol</option>
+              <option value="lanterna">Lanterna</option>
+              <option value="retrovisor">Retrovisor</option>
+              <option value="parachoque">Parachoque</option>
+              <option value="capo">Capô</option>
+              <option value="porta">Porta</option>
+              <option value="vidro">Vidro</option>
+              <option value="pintura">Pintura</option>
+              <option value="estofamento">Estofamento</option>
+              <option value="painel">Painel</option>
+              <option value="banco">Banco</option>
+              <option value="volante">Volante</option>
+              <option value="pedal">Pedal</option>
+              <option value="cinto">Cinto de Segurança</option>
+              <option value="airbag">Airbag</option>
+              <option value="sensor">Sensor</option>
+              <option value="computador">Computador de Bordo</option>
+              <option value="bateria">Bateria Automotiva</option>
+              <option value="carregador">Carregador de Bateria</option>
+              <option value="inversor">Inversor de Tensão</option>
+              <option value="gerador">Gerador de Energia</option>
+              <option value="motor">Motor</option>
             </select>
-            <select class="p-3 border border-blue-200 rounded-lg shadow-sm">
-              <option>Ordenar por</option>
-              <option>Preço ↑</option>
-              <option>Preço ↓</option>
-              <option>Mais vendidos</option>
+
+            <select class="p-3 border border-blue-200 rounded-lg shadow-sm" id="brand" onchange="filterK()">
+              <option value="nil">Marca</option>
+              <option value="marca1">Marca 1</option>
+              <option value="marca2">Marca 2</option>
+              <option value="marca3">Marca 3</option>
+              <option value="marca4">Marca 4</option>
+              <option value="marca5">Marca 5</option>
+            </select>
+            <select class="p-3 border border-blue-200 rounded-lg shadow-sm" id="sort" onchange="sort()">
+              <option value="nil">Ordenar por</option>
+              <option value="asc">Preço ↑</option>
+              <option value="desc">Preço ↓</option>
             </select>
           </div>
         </div>
       </section>
-
-              <!-- Grade de produtos -->
-        <!-- Grade de produtos -->
+      <!-- Grade de produtos -->
       <main class="p-8 flex-1 overflow-auto">
-        <h2 class="text-2xl font-bold mb-6 text-blue-800">Produtos em Destaque</h2>
+        <h2 class="text-2xl font-bold mb-6 text-blue-800">Produtos</h2>
         <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-2 hover:shadow-2xl">
-            <img src="static/img/peca1.jpg" alt="Filtro de Óleo" class="w-full h-44 object-cover rounded-xl mb-4" />
-            <h3 class="font-semibold text-lg mb-1">Filtro de Óleo XZ-200</h3>
-            <p class="text-gray-500 text-sm mb-4">Marca AutoFiltro</p>
+          {{range .Products}}
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-2 hover:shadow-2xl">
+            <img src="/static/img/{{.Image}}" alt="Pastilha de Freio" class="w-full h-44 object-cover rounded-xl mb-4" />
+            <h3 class="font-semibold text-lg mb-1">{{.Name}}</h3>
             <div class="mt-auto flex items-center justify-between">
-              <span class="text-blue-700 font-bold text-xl">R$ 49,90</span>
-              <button class="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow transition font-semibold">Comprar</button>
+              <span class="text-blue-700 font-bold text-xl">R$ {{.Price}}</span>
+              <button
+                class="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow transition font-semibold">Comprar</button>
             </div>
           </div>
-          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-2 hover:shadow-2xl">
-            <img src="static/img/peca2.jpg" alt="Pastilha de Freio" class="w-full h-44 object-cover rounded-xl mb-4" />
-            <h3 class="font-semibold text-lg mb-1">Pastilha de Freio Original</h3>
-            <p class="text-gray-500 text-sm mb-4">Kit para sedãs</p>
-            <div class="mt-auto flex items-center justify-between">
-              <span class="text-blue-700 font-bold text-xl">R$ 129,90</span>
-              <button class="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow transition font-semibold">Comprar</button>
-            </div>
-          </div>
-          <!-- Novo produto: Pneus -->
-          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-2 hover:shadow-2xl">
-            <img src="static/img/peca3.jpg" alt="Pneus" class="w-full h-44 object-cover rounded-xl mb-4" />
-            <h3 class="font-semibold text-lg mb-1">Pneu Aro 15 Premium</h3>
-            <p class="text-gray-500 text-sm mb-4">Alta durabilidade</p>
-            <div class="mt-auto flex items-center justify-between">
-              <span class="text-blue-700 font-bold text-xl">R$ 399,90</span>
-              <button class="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow transition font-semibold">Comprar</button>
-            </div>
-          </div>
-          <!-- Novo produto: Vidro de Carro -->
-          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col transition transform hover:-translate-y-2 hover:shadow-2xl">
-            <img src="static/img/peca4.jpg" alt="Vidro de Carro" class="w-full h-44 object-cover rounded-xl mb-4" />
-            <h3 class="font-semibold text-lg mb-1">Vidro Dianteiro Automotivo</h3>
-            <p class="text-gray-500 text-sm mb-4">Vidro laminado para carros</p>
-            <div class="mt-auto flex items-center justify-between">
-              <span class="text-blue-700 font-bold text-xl">R$ 699,90</span>
-              <button class="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white px-6 py-2 rounded-full shadow transition font-semibold">Comprar</button>
-            </div>
-          </div>
+          {{end}}
         </div>
       </main>
 
@@ -161,6 +186,40 @@
     document.getElementById('sidebarToggle').addEventListener('click', () => {
       document.querySelector('aside').classList.toggle('-translate-x-60');
     });
+    function search() {
+      let oldParams = new URLSearchParams(window.location.search);
+      let Params = new URLSearchParams();
+      if (oldParams.has('search')) {
+        Params.set('search', oldParams.get('search'));
+      } else {
+        Params.set('search', document.querySelector('input[type="text"]').value);
+      }
+      window.location.search = Params.toString();
+    }
+    function filterK() {
+      let oldParams = new URLSearchParams(window.location.search);
+      let Params = new URLSearchParams();
+      if (oldParams.has('k-type')) {
+        Params.set('k-type', oldParams.get('k-type'));
+      } else {
+        Params.set('k-type', document.querySelector('select').value);
+      }
+      window.location.search = Params.toString();
+    }
+    function sort() {
+      let oldParams = new URLSearchParams(window.location.search);
+      let Params = new URLSearchParams();
+      Params.set('sort', document.getElementById('sort').value);
+      window.location.search = Params.toString();
+    }
+    function clearFilters() {
+      let Params = new URLSearchParams(window.location.search);
+      Params.delete('search');
+      Params.delete('k-type');
+      Params.delete('sort');
+      window.location.search = Params.toString();
+    }
   </script>
 </body>
+
 </html>
